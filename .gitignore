@@ -1,0 +1,4 @@
+.DS_Store
+apikeys.txt
+*.pyc
+*__pycache__*
