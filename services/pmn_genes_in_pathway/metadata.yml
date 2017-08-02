@@ -1,0 +1,9 @@
+# file: metadata.yml
+
+---
+name: pmn
+version: 0.1
+type: query
+main_module: main.py
+url: http://pmn.plantcyc.org/
+description: 'A test adapter'
