@@ -2,7 +2,7 @@ import json
 import requests
 import xml.etree.ElementTree as ET
 
-biocyc_api = 'http://websvc.biocyc.org/apixml?'
+# biocyc_api = 'http://websvc.biocyc.org/apixml?'
 plantcyc_api = 'http://pmn.plantcyc.org/apixml?'
 
 
@@ -44,7 +44,8 @@ def search(args):
     
     query_detail = 'none'
     
-    biocyc_url = biocyc_api + 'fn=' + query_fn_locus + '&id=' + query_id_locus + '&detail=' + query_detail
+    # biocyc_url = biocyc_api + 'fn=' + query_fn_locus + '&id=' + query_id_locus + '&detail=' + query_detail
+    biocyc_url = plantcyc_api + 'fn=' + query_fn_locus + '&id=' + query_id_locus + '&detail=' + query_detail
     
     r_biocyc = requests.get(biocyc_url)
 
