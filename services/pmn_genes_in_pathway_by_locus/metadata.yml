@@ -8,8 +8,8 @@ main_module: services.pmn_genes_in_pathway_by_locus.main.py
 url: http://pmn.plantcyc.org/
 description: 'Get pathways of a locus and all the genes involved'
 whitelist:
-  - pmn.plantcyc.org
-  - websvc.biocyc.org
+  - plantcyc.org
+  - biocyc.org
 tags:
   - 'pathway'
   - 'gene'
