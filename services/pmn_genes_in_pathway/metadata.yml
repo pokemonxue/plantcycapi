@@ -1,9 +1,29 @@
 # file: metadata.yml
 
 ---
-name: pmn
+name: pmn_genes_in_pathway
 version: 0.1
 type: query
-main_module: main.py
+main_module: services.pmn_genes_in_pathway.main.py
 url: http://pmn.plantcyc.org/
-description: 'A test adapter'
+description: 'Get all the genes involved in a pathway'
+whitelist:
+  - pmn.plantcyc.org
+tags:
+  - 'pathway'
+  - 'gene'
+
+validate_request: true
+endpoints:
+    /search:
+        parameters:
+            - name: pwy
+              description: Unique Identifier for a pathway
+              type: string
+              required: true
+              default: 'ARG-PRO-PWY'
+            - name: org
+              description: Unique Identifier for an organism
+              type: string
+              required: true
+              default: 'ARA'
