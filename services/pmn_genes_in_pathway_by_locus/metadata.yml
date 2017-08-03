@@ -1,29 +1,30 @@
 # file: metadata.yml
 
 ---
-name: pmn_genes_in_pathway
+name: pmn_genes_in_pathway_by_locus
 version: 0.1
 type: query
-main_module: services.pmn_genes_in_pathway.main.py
+main_module: services.pmn_genes_in_pathway_by_locus.main.py
 url: http://pmn.plantcyc.org/
-description: 'Get all the genes involved in a pathway'
+description: 'Get pathways of a locus and all the genes involved'
 whitelist:
   - pmn.plantcyc.org
 tags:
   - 'pathway'
   - 'gene'
+  - 'locus'
 
 validate_request: true
 endpoints:
     /search:
         parameters:
-            - name: pwy
-              description: Unique Identifier for a pathway in Plantcyc
+            - name: locus
+              description: Locus Identifier
               type: string
               required: true
-              default: 'ARG-PRO-PWY'
+              default: 'AT5G14800'
             - name: org
-              description: Unique Identifier for an organism in Plantcyc
+              description: Unique Identifier for an organism
               type: string
               required: true
               default: 'ARA'
