@@ -9,6 +9,7 @@ url: http://pmn.plantcyc.org/
 description: 'Get pathways of a locus and all the genes involved'
 whitelist:
   - pmn.plantcyc.org
+  - websvc.biocyc.org
 tags:
   - 'pathway'
   - 'gene'
