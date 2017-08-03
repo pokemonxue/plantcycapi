@@ -4,7 +4,7 @@
 name: pmn_genes_in_pathway
 version: 0.1
 type: query
-main_module: services.pmn_genes_in_pathway.main.py
+main_module: pmn_genes_in_pathway.main.py
 url: http://pmn.plantcyc.org/
 description: 'Get all the genes involved in a pathway'
 whitelist:
