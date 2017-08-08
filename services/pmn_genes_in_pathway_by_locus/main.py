@@ -34,7 +34,7 @@ def get_genes_from_pathway(org_id, pwy_id):
     except TypeError:
         raise Exception('Unable to handle response from plantcyc '.format(r.text))
 
-
+        
 def search(args):
     locus_id = args['locus'].upper()
     org_id = args['org'].upper()
@@ -42,7 +42,7 @@ def search(args):
     query_fn_locus = 'pathways-of-gene'
     query_id_locus = org_id + ':' + locus_id
     
-    query_detail = 'none'
+    query_detail = 'low'
     
     # biocyc_url = biocyc_api + 'fn=' + query_fn_locus + '&id=' + query_id_locus + '&detail=' + query_detail
     biocyc_url = plantcyc_api + 'fn=' + query_fn_locus + '&id=' + query_id_locus + '&detail=' + query_detail
@@ -64,7 +64,8 @@ def search(args):
                 pwy_id = pwy.attrib['frameid'].upper()
                 pwy_org = pwy.attrib['orgid'].upper()
                 pwy_genes = get_genes_from_pathway(pwy_org, pwy_id)
-                result['pathways'].append({'pathway_id' : pwy_id, 'organism_id' : pwy_org, 'genes' : pwy_genes})
+                reactions = [r.attrib['frameid'] for r in pwy.find('reaction-list').findall('Reaction')]
+                result['pathways'].append({'pathway_id' : pwy_id, 'organism_id' : pwy_org, 'genes' : pwy_genes, 'reactions' : reactions})
             except KeyError:
                 continue
         print(json.dumps(result, indent=3))
