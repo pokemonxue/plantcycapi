@@ -2,11 +2,11 @@
 
 ---
 name: pmn_genes_in_pathway_by_locus
-version: 0.1
+version: 0.2
 type: query
 main_module: services.pmn_genes_in_pathway_by_locus.main.py
 url: http://pmn.plantcyc.org/
-description: 'Get pathways of a locus and all the genes involved'
+description: 'Get pathways of a locus and all the reactions and genes involved'
 whitelist:
   - plantcyc.org
   - biocyc.org
@@ -14,6 +14,7 @@ tags:
   - 'pathway'
   - 'gene'
   - 'locus'
+  - 'reaction'
 
 validate_request: true
 endpoints:
@@ -25,7 +26,7 @@ endpoints:
               required: true
               default: 'AT5G14800'
             - name: org
-              description: Unique Identifier for an organism
+              description: Unique Identifier for an organism in PlantCyc
               type: string
               required: true
               default: 'ARA'
